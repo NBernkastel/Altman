@@ -10,8 +10,8 @@ function GradePickerComponent(props: CoursePickerProps) {
   let filterStudents = props.state.courses[0].students.map((student, index) => {
     let grade = props.state.courses.map(e => e.grades[index]);
 
-    if ((filter === "Great" && grade.every(e => e === 5)) ||
-        (filter === "Bad" && grade.some(e => e === 2))) {
+    if ((filter === "Great" && grade.every(e => e === 5)) || //TODO ТУТ
+        (filter === "Bad" && grade.some(e => e === 2))) { //TODO ТУТ
       return (
         <li key={index}>
           <SingleStudentComponent student={student} />

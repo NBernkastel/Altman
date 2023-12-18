@@ -9,9 +9,9 @@ function CAddStudent(props: AddStudentProps) {
     let firstnameRef = useRef<HTMLInputElement | null>(null);
     let surnameRef = useRef<HTMLInputElement | null>(null);
 
-    function addStudent() {
+    function addStudent(): void {
         if (firstnameRef.current && surnameRef.current) {
-            const newStudent = new Student(
+            const newStudent: Student = new Student(
                 firstnameRef.current.value,
                 surnameRef.current.value
             );

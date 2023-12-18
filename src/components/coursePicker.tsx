@@ -23,14 +23,17 @@ function CoursePickerComponent(props: CoursePickerProps) {
     return (
         <CourseComponent
             course={course}
-            mark={(studentId: StudentId) => { // @ts-ignore
+            mark={(studentId: StudentId) => {
+                // @ts-ignore //TODO HERE
                 props.dispatch(new MarkStudent(course.id, studentId))
-            }} grade={(studentId: StudentId, grade: number) => {
+            }}
+            grade={(studentId: StudentId, grade: number) => {
                 let newhangeStudentGrade = new ChangeStudentGrade(course?.id, studentId, grade)
                 console.log(newhangeStudentGrade)
                 console.log(grade)
-            props.dispatch(newhangeStudentGrade)
-        }} candidates={props.state.students.filter(e => !course?.students.includes(e))}
+                props.dispatch(newhangeStudentGrade)
+        }}
+            candidates={props.state.students.filter(e => !course?.students.includes(e))}
             addStudent={(studentId: StudentId) => props.dispatch(new AddStudentToCourse(course?.id, studentId))}
         />
     )

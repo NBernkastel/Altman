@@ -1,5 +1,5 @@
 import {Student} from "../data/Student"
-import {useContext, useEffect} from "react";
+import {useContext} from "react";
 import {contextMode} from "../App";
 
 interface StudentProps {

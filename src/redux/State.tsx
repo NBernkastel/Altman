@@ -17,7 +17,7 @@ export class State {
             return e.id === courseId
         })
     }
-
+ //TODO ПРОВЕРИТЬ ИСПОЛЬЗУЮТСЯ ЛИ ЭТИ МЕТОДЫ
 }
 
 export function testState() {

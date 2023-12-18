@@ -8,7 +8,7 @@ export type Color = string
 function ColorInputComponent(props: ColorInputProps) {
     return (
         <>
-
+            \\  Переделать компонент цвета оставить для альтмана коммент что типо вот мой, но я придумал лучше а то 4 инпута конечно кринж
             <input type="color" value={props.value[4]} onChange={e =>
                 props.setValue(4, e.target.value)
             }/>

@@ -19,8 +19,8 @@ const css: React.CSSProperties = {
 export const contextMode = createContext(new ContextProvider(Array.from({ length: 10 }, () => "#FFFFFF"), "Full"));
 
 function App() {
-  const [greatLink, setGreatLink] = useState('Great');
-  const [badLink, setBadLink] = useState('Bad');
+  const [greatLink, setGreatLink] = useState('Great'); //TODO HERE
+  const [badLink, setBadLink] = useState('Bad'); //TODO HERE
 
   const gradesLinks = [greatLink, badLink];
   const [state, dispatch] = useReducer(markReducer, testState());

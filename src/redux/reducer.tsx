@@ -3,7 +3,7 @@ import {State} from "./State";
 import {Action, AddStudent, AddStudentToCourse, ChangeStudentGrade, MarkStudent} from "./action";
 import {Course} from "../data/Course";
 
-// @ts-ignore
+// @ts-ignore //TODO HERE
 const markReducer: Reducer<State, Action> = (state, action) => {
   switch (true) {
     case action instanceof MarkStudent:
@@ -36,13 +36,12 @@ const markReducer: Reducer<State, Action> = (state, action) => {
   }
 };
 
-// Вспомогательная функция для добавления студента курсу
 const addStudentToCourse = (state: State, action: AddStudentToCourse): State => {
   const student = state.students.find(student => student.id === action.studentId);
   const course = state.courses.find(course => course.id === action.courseId);
 
   if (student && course) {
-    // @ts-ignore
+    // @ts-ignore //TODO HERE
       const updatedCourse: Course = {
         ...course,
         students: [...course.students, student],
@@ -64,8 +63,8 @@ const updateCourse = (course: Course, action: MarkStudent): Course => {
   const markIndex = course.students.findIndex(student => student.id === action.studentId);
 
   if (markIndex !== -1) {
-    // @ts-ignore
-      return {
+      // @ts-ignore
+    return {
       ...course,
       marked: course.marked.map((mark, index) => (index === markIndex ? !mark : mark)),
     };

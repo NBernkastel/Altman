@@ -23,16 +23,13 @@ function CourseComponent(props: CourseProps) {
                     Add Student
                 </summary>
                 <select ref={addStudentSelectRef}>
-                    {props.candidates.map((student) => (
+                    {props.candidates.map((student: Student) => (
                         <option>
                             {student.id}
                         </option>
                     ))}
                 </select>
-                <button onClick={e => {
-                    if(addStudentSelectRef.current)
-                        props.addStudent(addStudentSelectRef.current.value)
-                }}>
+                <button onClick={() => {if(addStudentSelectRef.current) props.addStudent(addStudentSelectRef.current.value)}}>
                     Add
                 </button>
             </details>
